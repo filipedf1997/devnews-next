@@ -49,7 +49,7 @@ describe('Posts page tests', () => {
               slug: 'my-new-post',
               title: 'My new Post',
               excerpt: 'Post excerpt',
-              updateAt: 'December 25, 2021',
+              updateAt: '25 de dezembro de 2021',
             },
           ],
         },

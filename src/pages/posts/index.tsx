@@ -1,5 +1,7 @@
 import SEO from '../../components/SEO';
 import Prismic from '@prismicio/client';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import styles from './posts.module.scss';
@@ -55,11 +57,11 @@ export const getStaticProps: GetStaticProps = async () => {
     excerpt:
       post.data.content.find(content => content.type === 'paragraph')?.text ??
       '',
-    updateAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric',
-    }),
+    updateAt: format(
+      new Date(post?.last_publication_date),
+      "d 'de' MMMM 'de' yyyy",
+      { locale: ptBR },
+    ),
   }));
 
   return {
