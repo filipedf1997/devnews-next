@@ -20,11 +20,11 @@ export default function Post({ post }: PostProps) {
 
       <main className={styles.container}>
         <article className={styles.post}>
-          <h1>{post.title}</h1>
-          <time>{post.updateAt}</time>
+          <h1>{post?.title}</h1>
+          <time>{post?.updateAt}</time>
           <div
             className={styles.content}
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: post?.content }}
           />
         </article>
       </main>
@@ -46,9 +46,9 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const post = {
     slug,
-    title: RichText.asText(response.data.title),
-    content: RichText.asText(response.data.content),
-    updateAt: new Date(response.last_publication_date).toLocaleDateString(
+    title: RichText.asText(response.data?.title),
+    content: RichText.asText(response.data?.content),
+    updateAt: new Date(response?.last_publication_date).toLocaleDateString(
       'pt-BR',
       {
         day: '2-digit',
