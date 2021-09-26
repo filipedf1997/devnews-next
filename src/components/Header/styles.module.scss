@@ -1,0 +1,24 @@
+.container {
+  height: 5rem;
+  border-bottom: 1px solid var(--gray800);
+}
+
+.content {
+  max-width: 1120px;
+  height: 5rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 3.75rem;
+  }
+
+  nav {
+    margin-left: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+  }
+}
